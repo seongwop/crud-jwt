@@ -6,15 +6,15 @@
 
 - API Statement
 
-| Method | URL               | Request Header                                                                                                | Request                                                                |   
-|--------|-------------------|---------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------|
-| POST   | /api/user/signup  | -                                                                                                             | {<br/>"username" : "username1",<br/>"password" : "password1"<br/>}     |   
-| POST   | /api/user/login   | -                                                                                                             | {<br/>"username" : "username1",<br/>"password" : "password1"<br/>}     |
-| GET    | /api/posts        | -                                                                                                             | -                                                                      |   
-| GET    | /api/post{id}     | Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1c2VybmFtZTEiLCJleHAiOjE2ODIwNDkzNzYsImlhdCI6MTY4MjA... | -                                                                      |   
-| POST   | /api/post         | -                                                                                                             | {<br/>"title": "title1",<br/>"content": "content1"<br/>}               |   
-| PUT    | /api/post{id}     | Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1c2VybmFtZTEiLCJleHAiOjE2ODIwNDkzNzYsImlhdCI6MTY4MjA... | {<br/>"title": "modifiedtitle",<br/>"content": "modifiedcontent"<br/>} |  
-| DELETE | /api/post{id}     | Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1c2VybmFtZTEiLCJleHAiOjE2ODIwNDkzNzYsImlhdCI6MTY4MjA... | -                                                                      |  
+| Method | URL               | Request Header                                    | Request                                                                |   
+|--------|-------------------|---------------------------------------------------|------------------------------------------------------------------------|
+| POST   | /api/user/signup  | -                                                 | {<br/>"username" : "username1",<br/>"password" : "password1"<br/>}     |   
+| POST   | /api/user/login   | -                                                 | {<br/>"username" : "username1",<br/>"password" : "password1"<br/>}     |
+| GET    | /api/posts        | -                                                 | -                                                                      |   
+| GET    | /api/post{id}     | Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.ey...  | -                                                                      |   
+| POST   | /api/post         | -                                                 | {<br/>"title": "title1",<br/>"content": "content1"<br/>}               |   
+| PUT    | /api/post{id}     | Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.ey...  | {<br/>"title": "modifiedtitle",<br/>"content": "modifiedcontent"<br/>} |  
+| DELETE | /api/post{id}     | Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.ey...  | -                                                                      |  
 
 ## Points
 - JWT를 사용하여 인증/인가를 구현 했을 때의 장점: 인증에 필요한 모든 정보를 담고 있어서 별도의 인증이 필요하지 않음, 쿠키를 전달하지 않음으로 쿠키에 인한 취약점이 사라짐, 서버 측 부하를 낮춤
