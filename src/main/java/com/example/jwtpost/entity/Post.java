@@ -40,5 +40,4 @@ public class Post extends TimeStamped {
         this.title = requestDto.getTitle();
         this.content = requestDto.getContent();
     }
-
 }

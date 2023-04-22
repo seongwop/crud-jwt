@@ -21,7 +21,7 @@ public class User {
     @Column(nullable = false)
     private String password;
 
-    @OneToMany(mappedBy = "user ")
+    @OneToMany(mappedBy = "user")
     @Column
     private List<Post> posts;
 

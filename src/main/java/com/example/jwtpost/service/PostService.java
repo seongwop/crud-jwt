@@ -40,19 +40,9 @@ public class PostService {
     public PostResponseDto createPost(PostRequestDto requestDto, HttpServletRequest request) {
 
         String token = jwtUtil.resolveToken(request);
-        Claims claims;
 
         if (token != null) {
-            if (jwtUtil.validateToken(token)) {
-
-                claims = jwtUtil.getUserInfoFromToken(token);
-            } else {
-                throw new IllegalArgumentException("Token Error");
-            }
-
-            User user = userRepository.findByUsername(claims.getSubject()).orElseThrow(
-                    () -> new IllegalArgumentException("사용자가 존재하지 않습니다.")
-            );
+            User user = validateUser(token);
 
             Post post = new Post(requestDto, user);
             postRepository.saveAndFlush(post);
@@ -75,19 +65,9 @@ public class PostService {
     public PostResponseDto updatePost(Long id, PostRequestDto requestDto, HttpServletRequest request) {
 
         String token = jwtUtil.resolveToken(request);
-        Claims claims;
 
         if (token != null) {
-            if (jwtUtil.validateToken(token)) {
-
-                claims = jwtUtil.getUserInfoFromToken(token);
-            } else {
-                throw new IllegalArgumentException("Token Error");
-            }
-
-            User user = userRepository.findByUsername(claims.getSubject()).orElseThrow(
-                    () -> new IllegalArgumentException("사용자가 존재하지 않습니다")
-            );
+            User user = validateUser(token);
 
             Post post = postRepository.findByIdAndUserId(id, user).orElseThrow(
                     () -> new NullPointerException("해당 사용자의 게시글은 존재하지 않습니다.")
@@ -105,25 +85,15 @@ public class PostService {
     @Transactional
     public ResponseEntity<Message> deletePost(Long id, HttpServletRequest request) {
         String token = jwtUtil.resolveToken(request);
-        Claims claims;
 
         if (token != null) {
-            if (jwtUtil.validateToken(token)) {
-
-                claims = jwtUtil.getUserInfoFromToken(token);
-            } else {
-                throw new IllegalArgumentException("Token Error");
-            }
-
-            User user = userRepository.findByUsername(claims.getSubject()).orElseThrow(
-                    () -> new IllegalArgumentException("사용자가 존재하지 않습니다")
-            );
+            User user = validateUser(token);
 
             Post post = postRepository.findByIdAndUserId(id, user).orElseThrow(
                     () -> new NullPointerException("해당 사용자의 게시글은 존재하지 않습니다.")
             );
 
-            postRepository.deleteById(id);
+            postRepository.deleteById(post.getId());
 
             Message message = new Message();
             message.setMsg("삭제 성공");
@@ -131,9 +101,21 @@ public class PostService {
 
             return new ResponseEntity<>(message, HttpStatus.OK);
 
-
         } else {
             return null;
         }
+    }
+
+    private User validateUser(String token) {
+        Claims claims;
+        if (jwtUtil.validateToken(token)) {
+
+            claims = jwtUtil.getUserInfoFromToken(token);
+        } else {
+            throw new IllegalArgumentException("Token Error");
+        }
+        return userRepository.findByUsername(claims.getSubject()).orElseThrow(
+                () -> new IllegalArgumentException("사용자가 존재하지 않습니다")
+        );
     }
 }
