@@ -1,6 +1,6 @@
-package com.example.jwtpost.dto;
+package com.example.crudjwt.dto;
 
-import com.example.jwtpost.entity.Post;
+import com.example.crudjwt.entity.Post;
 import lombok.Getter;
 
 import java.time.LocalDateTime;

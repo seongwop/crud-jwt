@@ -1,7 +1,7 @@
-package com.example.jwtpost.entity;
+package com.example.crudjwt.entity;
 
 
-import com.example.jwtpost.dto.PostRequestDto;
+import com.example.crudjwt.dto.PostRequestDto;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 

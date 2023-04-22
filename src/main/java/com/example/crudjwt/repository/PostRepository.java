@@ -1,7 +1,7 @@
-package com.example.jwtpost.repository;
+package com.example.crudjwt.repository;
 
-import com.example.jwtpost.entity.Post;
-import com.example.jwtpost.entity.User;
+import com.example.crudjwt.entity.Post;
+import com.example.crudjwt.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;

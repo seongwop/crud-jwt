@@ -1,4 +1,4 @@
-package com.example.jwtpost.entity;
+package com.example.crudjwt.entity;
 
 
 import lombok.Getter;

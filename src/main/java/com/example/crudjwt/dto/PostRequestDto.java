@@ -1,4 +1,4 @@
-package com.example.jwtpost.dto;
+package com.example.crudjwt.dto;
 
 import lombok.Getter;
 

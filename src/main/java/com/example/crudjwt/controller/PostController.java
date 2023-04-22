@@ -1,10 +1,10 @@
-package com.example.jwtpost.controller;
+package com.example.crudjwt.controller;
 
 
-import com.example.jwtpost.dto.PostRequestDto;
-import com.example.jwtpost.dto.PostResponseDto;
-import com.example.jwtpost.message.Message;
-import com.example.jwtpost.service.PostService;
+import com.example.crudjwt.dto.PostRequestDto;
+import com.example.crudjwt.dto.PostResponseDto;
+import com.example.crudjwt.message.Message;
+import com.example.crudjwt.service.PostService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

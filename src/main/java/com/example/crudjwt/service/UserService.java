@@ -1,11 +1,11 @@
-package com.example.jwtpost.service;
+package com.example.crudjwt.service;
 
-import com.example.jwtpost.dto.LoginRequestDto;
-import com.example.jwtpost.dto.SignupRequestDto;
-import com.example.jwtpost.entity.User;
-import com.example.jwtpost.jwt.JwtUtil;
-import com.example.jwtpost.message.Message;
-import com.example.jwtpost.repository.UserRepository;
+import com.example.crudjwt.dto.LoginRequestDto;
+import com.example.crudjwt.dto.SignupRequestDto;
+import com.example.crudjwt.entity.User;
+import com.example.crudjwt.jwt.JwtUtil;
+import com.example.crudjwt.message.Message;
+import com.example.crudjwt.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

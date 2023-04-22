@@ -1,4 +1,4 @@
-package com.example.jwtpost.jwt;
+package com.example.crudjwt.jwt;
 
 import io.jsonwebtoken.*;
 import io.jsonwebtoken.security.Keys;
